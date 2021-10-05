@@ -3,7 +3,7 @@ from datatable import dt
 
 candidatos = datatable.fread('data/preseleccion.csv')['Candidato/a'].to_list()[0]
 
-filtradas = open('filtradas.csv', 'rt')
+filtradas = open('noticias.csv', 'rt')
 
 medicion = {}
 i = 1
@@ -29,8 +29,12 @@ while True:
 
 filtradas.close()
 
-import json
+# paso de json a csv
+csv = open('medicion.csv', 'wt')
+csv.write('candidato,freq\n')
+for candidato, freq in medicion.items():
+    fila = candidato + ',' + str(freq) + '\n'
 
-salida = open('medicion.json', 'wt')
-json.dump(medicion, salida)
-salida.close()
+    csv.write(fila)
+
+csv.close()

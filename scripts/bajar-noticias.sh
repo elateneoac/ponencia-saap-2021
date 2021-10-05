@@ -1,0 +1,1 @@
+mongoexport --host=xxx --port=27017 --authenticationDatabase admin -u xxx -p xxx --db=dlm --collection=noticias --query='{"diario":{"$in":["infobae","clarin","lanacion","paginadoce", "ambito"]},"fecha":{"$gte":{"$date":"2021-00-01T00:00:00.000Z"}, "$lte":{"$date":"2021-09-11T23:59:59.000Z"}}}' --type csv --fields url,diario,seccion,fecha,titulo,texto  --out noticias.csv
