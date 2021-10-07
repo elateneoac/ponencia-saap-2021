@@ -38,6 +38,9 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# env python
+env/
+
 # data muy pesada
 data/filtradas.csv
 data/noticias.csv
